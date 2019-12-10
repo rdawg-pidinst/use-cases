@@ -24,7 +24,7 @@ An example of EMF sites from DEIMS-SDR: [LTER Zöbelboden](https://deims.org/8ed
 For describe instruments present or used for collect observations during the field work on the site, 2 solutions are adopted:
 
 
-* SensorML template within Geoinformation Enabling ToolkIT starterkit[^1] (GET-IT) 
+* SensorML template within Geoinformation Enabling ToolkIT starterkit [1] (GET-IT) 
 * DEIMS-SDR template
 
 SensorML specific profile (see paragraph 2.2) adopted in order to describe instruments used in the LTER sites. An example of SensorML landing pages from GET-IT: [LTER Zöbelboden Austria precipitation WW deployed at site LTER Zöbelboden - Austria](http://cdn.lter-europe.net/sensors/sensor/ds/?format=text/html&sensor_id=https%3A//deims.org/sensor/fb583610-fe71-4793-b1a9-43097ed5c3e3)
@@ -44,7 +44,7 @@ The goal of DEIMS-SDR is to be the most globally comprehensive catalogue of envi
 
 #### GET-IT and EDI for sensors management
 
-GET-IT[^2] is a software suite that aims to enable domain expert researchers to become leaders in the creation of an interoperable SDI. By using some relevant standards from the OGC (WMS, WFS, WCS, CSW, SensorML, and SOS), it enables the interoperable distribution of data collected by researchers, both geospatial and observations, through web services, creating their own spatial data repositories and facilitating the entry and maintenance of data and metadata of data and sensors. Created services, with entered data and metadata, are hosted by virtual machines that can be installed in server or in hosting sites. Developed by a joint research group of CNR IREA - CNR ISMAR under the flagship project RITMARE, GET-IT is completely free and open-source and has among its objectives the creation of a federated interoperable infrastructure for the observational network of geographic data, allowing researchers and research organizations to share their data and metadata. The system, as a whole, adopts a service-oriented architecture dedicated to geographic and observational services. 
+GET-IT [2] is a software suite that aims to enable domain expert researchers to become leaders in the creation of an interoperable SDI. By using some relevant standards from the OGC (WMS, WFS, WCS, CSW, SensorML, and SOS), it enables the interoperable distribution of data collected by researchers, both geospatial and observations, through web services, creating their own spatial data repositories and facilitating the entry and maintenance of data and metadata of data and sensors. Created services, with entered data and metadata, are hosted by virtual machines that can be installed in server or in hosting sites. Developed by a joint research group of CNR IREA - CNR ISMAR under the flagship project RITMARE, GET-IT is completely free and open-source and has among its objectives the creation of a federated interoperable infrastructure for the observational network of geographic data, allowing researchers and research organizations to share their data and metadata. The system, as a whole, adopts a service-oriented architecture dedicated to geographic and observational services. 
 
 The architecture is divided into three different layers (Fig. 3.2): 
 
@@ -52,23 +52,23 @@ The architecture is divided into three different layers (Fig. 3.2):
 * Access layer (services) - tools for accessing and managing resources through interoperable services; 
 * Graphic user interface (GUI) - client-side component of the platform, the GUI is delegated to the display of resources and includes the tools to aggregate (mashup) and reorganize the same, and to facilitate user interaction.
 
-GET-IT consists of a different docker containers one of each software (Fig. 3.2); the basic software used is GeoNode[^3], an open source software widely known geographic content management system. GeoNode already contains: PyCWS[^4] a OGC catalogue service of metadata server written in Python and GeoServer[^5] an open source server for sharing geospatial data. Within GeoNode some aspect is missing, in particular are not present Sensor Web Enablement (SWE) and semantic enablement, has been edited and have been added new software implementations, both client and server side, for the creation and management of observations, sensors and metadata, semantically enabled.
+GET-IT consists of a different docker containers one of each software (Fig. 3.2); the basic software used is GeoNode [3], an open source software widely known geographic content management system. GeoNode already contains: PyCWS [4] a OGC catalogue service of metadata server written in Python and GeoServer [5] an open source server for sharing geospatial data. Within GeoNode some aspect is missing, in particular are not present Sensor Web Enablement (SWE) and semantic enablement, has been edited and have been added new software implementations, both client and server side, for the creation and management of observations, sensors and metadata, semantically enabled.
 
 In particular, the new software implementations include:
 
 * A metadata editor client, named EDI, which allows the creation and validation of metadata in accordance with different profiles or templates. EDI allows plugging in external data sources that are made available as SPARQL endpoints;
-* A SOS manager (52°North SOS[^6]) that allows the registration of new sensors edited in Sensor Metadata Language (SensorML) metadata profile by EDI metadata editor;
+* A SOS manager (52°North SOS [6]) that allows the registration of new sensors edited in Sensor Metadata Language (SensorML) metadata profile by EDI metadata editor;
 * An insert observation interface allows to upload observations, by copy and paste action, for GET-IT registered sensor;
-* A geographic data manager (GeoServer[^7]) that allows to share geographic data;
+* A geographic data manager (GeoServer [7]) that allows to share geographic data;
 * A SOS client that allows viewing the information of registered sensors and data recording in a web map.
 
-The documentation of GET-IT is available on a dedicated website[^8] also providing information on installation routines[^9]. 
+The documentation of GET-IT is available on a dedicated website [8] also providing information on installation routines [9]. 
 
-### Sensor Web Enablement Lightweight SOS Profile adopted by LTER-Europe community[^10]
+### Sensor Web Enablement Lightweight SOS Profile adopted by LTER-Europe community [10]
 
-SensorML is the recommended sensor metadata for SOS 2.0[^11].
+SensorML is the recommended sensor metadata for SOS 2.0 [11].
 
-SensorML is used within SOS for encoding sensor metadata documents that are returned in case of DescribeSensor requests. This lightweight profile[^12] defines a minimum set of mandatory metadata that need to be provided in a SensorML document. Complex elements of SensorML are not considered here.
+SensorML is used within SOS for encoding sensor metadata documents that are returned in case of DescribeSensor requests. This lightweight profile [12] defines a minimum set of mandatory metadata that need to be provided in a SensorML document. Complex elements of SensorML are not considered here.
 
         **gml:description** (mandatory): Short textual description of the sensor or sensor system.
 
@@ -85,7 +85,7 @@ SensorML is used within SOS for encoding sensor metadata documents that are retu
         **sml:classification** (mandatory): This element contains classifiers for the sensor system. 11-169r1 Copyright © 2014 Open Geospatial Consortium 11 Each "classifier/Term" element contained in the "ClassifierList" must have a "definition" attribute. This attribute links to the semantics of the identifier. One classifier has to be present which contains the definition “http://www.opengis.net/def/property/OGC/0/SensorType”. The value of its contained “Term” element states the type of the sensor system (e.g., “weather station”). 
 
 
-        **sml:contacts **(mandatory): This element contains contact information about the operator of the sensor. The element "contacts/ContactList/member/gmd:CI_ResponsibleParty" has to be present to define the responsible party of the sensor system[^13]. 
+        **sml:contacts **(mandatory): This element contains contact information about the operator of the sensor. The element "contacts/ContactList/member/gmd:CI_ResponsibleParty" has to be present to define the responsible party of the sensor system [13]. 
 
 
         **sml:featuresOfInterest** (mandatory): This element contains the real world entity, the feature of interest, which is observed by the sensor system. In case of this profile, the feature of interest is a station and modelled as a SamplingPoint. 
@@ -272,18 +272,18 @@ geometry = GM_Point (_X/Y/Spatial Reference System of the sensor_)
 
 responsibleParty = _DREAL Midi-Pyrénées_
 
-mediaMonitored[^14] = http://inspire.ec.europa.eu/codeList/MediaValue/water
+mediaMonitored [14] = http://inspire.ec.europa.eu/codeList/MediaValue/water
 
-measurementRegime[^15] = _http://inspire.ec.europa.eu/codeList/MeasurementRegimeValue/continuousDataCollection_
+measurementRegime [15] = _http://inspire.ec.europa.eu/codeList/MeasurementRegimeValue/continuousDataCollection_
 
 mobile = False
 
-resultAcquisitionSource[^16] = _http://inspire.ec.europa.eu/codeList/ResultAcquisitionSourceValue/inSitu_
+resultAcquisitionSource [16] = _http://inspire.ec.europa.eu/codeList/ResultAcquisitionSourceValue/inSitu_
 
 specialisedEMFType = _http://sandre.eaufrance.fr/?urn=urn:sandre:dictionnaire:HYD::entite:Capteur:ressource:2.1:::html_
 
 
-### EMF Sensor fields - XML example[^17]
+### EMF Sensor fields - XML example [17]
 
 
 ```
@@ -386,59 +386,39 @@ specialisedEMFType = _http://sandre.eaufrance.fr/?urn=urn:sandre:dictionnaire:HY
 <!-- Footnotes themselves at the bottom. -->
 ## Notes
 
-[^1]:
+[1] Geoinformation Enabling ToolkIT starterkit (GET-IT): [http://www.get-it.it/](http://www.get-it.it/)
 
-     Geoinformation Enabling ToolkIT starterkit (GET-IT): [http://www.get-it.it/](http://www.get-it.it/)
+[2] http://www.get-it.it
 
-[^2]:
-     http://www.get-it.it
+[3] http://geonode.org
 
-[^3]:
-     http://geonode.org
+[4] http://pycsw.org
 
-[^4]:
-     http://pycsw.org
+[5] http://www.geoserver.com
 
-[^5]:
-     http://www.geoserver.com
+[6] http://52north.org
 
-[^6]:
+ [7] http://geoserver.org
 
-     http://52north.org
+ [8] http://getit.readthedocs.io/en/latest/
 
-[^7]:
+ [9] http:// getit.readthedocs.io/en/latest/tutorial/admin/scratch.html#scratch
 
-     http://geoserver.org
+ [10] [OGC® Best Practice for Sensor Web Enablement Lightweight SOS ...https://portal.opengeospatial.org/files/?artifact_id=52803](https://portal.opengeospatial.org/files/?artifact_id=52803)
 
-[^8]:
-     http://getit.readthedocs.io/en/latest/
+ [11] http://www.ogcnetwork.net/sos_2_0/tutorial/sensorml
 
-[^9]:
-     http:// getit.readthedocs.io/en/latest/tutorial/admin/scratch.html#scratch
+ [12] https://portal.opengeospatial.org/files/?artifact_id=52675
 
-[^10]:
-     [OGC® Best Practice for Sensor Web Enablement Lightweight SOS ...https://portal.opengeospatial.org/files/?artifact_id=52803](https://portal.opengeospatial.org/files/?artifact_id=52803)
+ [13] https://portal.opengeospatial.org/files/?artifact_id=52803
 
-[^11]:
-     http://www.ogcnetwork.net/sos_2_0/tutorial/sensorml
+ [14] http://inspire.ec.europa.eu/codelist/MediaValue
 
-[^12]:
-     https://portal.opengeospatial.org/files/?artifact_id=52675
+ [15] http://inspire.ec.europa.eu/codelist/MeasurementRegimeValue
 
-[^13]:
-     https://portal.opengeospatial.org/files/?artifact_id=52803
+ [16] http://inspire.ec.europa.eu/codelist/ResultAcquisitionSourceValue
 
-[^14]:
-     http://inspire.ec.europa.eu/codelist/MediaValue
-
-[^15]:
-     http://inspire.ec.europa.eu/codelist/MeasurementRegimeValue
-
-[^16]:
-     http://inspire.ec.europa.eu/codelist/ResultAcquisitionSourceValue
-
-[^17]:
-     http://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd
+ [17] http://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd
 
 
 <!-- Docs to Markdown version 1.0β17 -->
