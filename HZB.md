@@ -1,10 +1,8 @@
 # Use case description at HZB
 
 
-## Rolf Krahl
-
-
-## November 17, 2017
+Rolf Krahl  
+November 17, 2017
 
 _A working group on Persistent Identification of Instruments [3] within the Research Data Alliance [4] is planned to be established. For the purpose of the discussion in this group, we describe how persistent identification of instruments may be used at HZB and for what purposes this might be useful._
 
