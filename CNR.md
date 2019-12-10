@@ -7,7 +7,7 @@ January 2018
 
 # Introduction
 
-The Spatial Data Infrastructures (SDI) development team at the Institute for Electromagnetic Sensing of the Environment of the Italian National Research Council (IREA - CNR) has been active in the implementation of Sensor Web Enablement (SWE) practices since 2012. The main output of this research thread, the Geoinformation Enabling ToolkIT starterkit[^1] (GET-IT) is currently deployed in the context of a broad range of initiatives. Persistent identification of sensor instances that are registered in the SOS server included in this software suite is among the desiderata that are envisaged for future releases.
+The Spatial Data Infrastructures (SDI) development team at the Institute for Electromagnetic Sensing of the Environment of the Italian National Research Council (IREA - CNR) has been active in the implementation of Sensor Web Enablement (SWE) practices since 2012. The main output of this research thread, the Geoinformation Enabling ToolkIT starterkit [1] (GET-IT) is currently deployed in the context of a broad range of initiatives. Persistent identification of sensor instances that are registered in the SOS server included in this software suite is among the desiderata that are envisaged for future releases.
 
 Since SWE is the reference framework of our research, we focus on features that can be exposed via PID metadata and are missing in the representation of sensor instances that are ingested by SOS servers, namely SensorML descriptions, and in the SWE ecosystem at large. Example of such features include … In fact, beside the primary usage of PIDs as unique, persistent references to resources, PID metadata can enable further features of both the Registration Agency and the specific Registrant.
 
@@ -29,7 +29,7 @@ R1: In order to be applicable to our scenario, PIDs shall feature a metadata sch
 
 # UC2: Actionability of PIDs
 
-This use case addresses PID _actionability_, i.e. metadata that is intelligible to automated agents. An essential element is _content negotiation_, i.e. the capability of either the PID resolution system or that by the Registrant to serve different content according to the type specified in the HTTP request. The main providers of DOI for research (Crossref, DataCite, mEDRA) already provide this feature[^2] (albeit not for the purpose of actionability of DOIs). It works as follows:
+This use case addresses PID _actionability_, i.e. metadata that is intelligible to automated agents. An essential element is _content negotiation_, i.e. the capability of either the PID resolution system or that by the Registrant to serve different content according to the type specified in the HTTP request. The main providers of DOI for research (Crossref, DataCite, mEDRA) already provide this feature [2] (albeit not for the purpose of actionability of DOIs). It works as follows:
 
 
 
@@ -97,7 +97,7 @@ In metadata of = IP (Infrastructure Provider) or LP (Landing Page)
 
 # Appendix A: Mockup metadata
 
-This section contains mockup metadata that may address some of the requirements defined in the PIDINST use cases as well as in the case statement. The metadata is provided as JSON-LD[^3] data structures in order to be either easily intelligible to programmers and arbitrarily extensible via the many existing ontologies and schemata.
+This section contains mockup metadata that may address some of the requirements defined in the PIDINST use cases as well as in the case statement. The metadata is provided as JSON-LD [3] data structures in order to be either easily intelligible to programmers and arbitrarily extensible via the many existing ontologies and schemata.
 
 NOTE: For many of the metadata fields, it could be argued that their place is in sensor metadata, not in PID metadata. Exploiting PID metadata to complement sensor metadata can make sense but such practice can make the definition of a common baseline for PID metadata more difficult to accomplish.
 
