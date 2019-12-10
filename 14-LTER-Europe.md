@@ -381,7 +381,7 @@ specialisedEMFType = _http://sandre.eaufrance.fr/?urn=urn:sandre:dictionnaire:HY
     </extension>
     </complexContent>
 </complexType>
-
+```
 
 <!-- Footnotes themselves at the bottom. -->
 ## Notes
