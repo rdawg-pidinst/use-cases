@@ -5,23 +5,21 @@ Tom Demeranville
 May 2018
 
 
-## Summary {#summary}
+## Summary
 
 ORCID is developing the ability to recognise access and use of large scale facilities and infrastructure within the ORCID record.  This document describes our proposed implementation and rationale.
 
 At launch ORCID expects users of this new functionality to use existing identifier infrastructure such as RRIDs (Research Resource Identifiers [1]), Handles, DOIs and even plain URIs to reference infrastructure and facilities, but will incorporate the outputs of the PIDINST WG as they are released.
 
 
-## 1.0 Background {#1-0-background}
+## 1.0 Background
 
 At present, the ORCID record contains sections for listing Affiliations, Works, Funding, and Peer Review.  A recent ORCID-supported working group [2] charged with developing workflows for acknowledging User Facilities (see Report [3]) found that facilities are distinct from both affiliations and funding.  In that work, a draft JATS xml schema for publishers created a distinct section to capture facilities, collections, and research resources (see Table 1, below). 
 
 
-## 2.0 Proposal for a new ORCID record section {#2-0-proposal-for-a-new-orcid-record-section}
+## 2.0 Proposal for a new ORCID record section
 
 ORCID will create a new section, called “Research Resources” in the ORCID record to hold information about “things that researchers use for their research”.  The section will contain connections to resources that are not generally cited by researchers within article reference lists, which will vary by domain. **These connections require that the resource be associated with a persistent identifier** [4]**, preferably one that is resolvable to a landing page with more information about the resource.**  In addition, updating an ORCID record requires explicit record holder permission, so there must be an API-mediated process during which the researcher’s ORCID iD can be authenticated and read/write permissions collected.  This scopes the resources included in this section to those_ that require a specific proposal process or credential to access_. With this caveat, this section would hold information about the resources listed in the following table:
-
- 
 
 
 <table>
@@ -71,17 +69,17 @@ ORCID will create a new section, called “Research Resources” in the ORCID re
 ** Table 1.  Resource types**
 
 
-## 3.0 Data fields {#3-0-data-fields}
+## 3.0 Data fields
 
 ORCID strives to make connections between identifiers using the minimal amount of metadata.  Our goal is to enable the creation, storage, and sharing of iD-ID connections with trusted provenance.  Ideally, creation of iD-resource connections would occur as a researcher shares their ORCID iD in a research workflow, such as a permit or credentialing process to request access to a resource. Information about the resource would be posted into the ORCID record by the resource host when access is granted.  And, the metadata record would be shared as a researcher creates an output based on their use of the resource.
 
 
-### 3.1 Proposal/Project Metadata {#3-1-proposal-project-metadata}
+### 3.1 Proposal/Project Metadata
 
 These are the data fields collected and stored by Resource and/or Proposal Host, detailed in the User Facilities and Publications Working Group Report. 
 
 
-#### 3.1.1 Required {#3-1-1-required}
+#### 3.1.1 Required
 
 *   **Researcher(s) **This is the name of the person(s) submitting or associated with the proposal and the associated unique identifier for the researcher, expressed as a URI with the format [https://orcid.org/####-####-####-####](https://orcid.org/####-####-####-####).
     *   **Researcher(s) Name**
@@ -103,7 +101,7 @@ These are the data fields collected and stored by Resource and/or Proposal Host,
         *   **Organization ID**
 
 
-#### 3.1.2 Optional {#3-1-2-optional}
+#### 3.1.2 Optional
 
 *   **Reviewer. **The name and ORCID iD for the person(s) reviewing the resource proposal or request. 
     *   **Name**
@@ -116,12 +114,12 @@ These are the data fields collected and stored by Resource and/or Proposal Host,
     *   **ID**
 
 
-### 3.2 ORCID Record Metadata {#3-2-orcid-record-metadata}
+### 3.2 ORCID Record Metadata
 
 These are the data fields collected through the ORCID Member API and stored (with permission) in a researcher’s ORCID record.  This is our mapping of the data described in section 3.1.
 
 
-#### 3.2.1 Required {#3-2-1-required}
+#### 3.2.1 Required
 
 *   **Proposal/Registration Title. ** This is the main display field for research resources e.g., “Neutron Beam Award” or “Beam time and computing resources”.
 *   **Proposal/Registration ID.**  This is the public identifier (DOI, PURL, etc.) for the proposal or request (ID type tbc) to use the resource, e.g., 2017-A: CNCS.  Ideally, this identifier should be persistent and resolve to a public landing page with information about the proposal or request, such as an awards database or resource user log. 
@@ -137,7 +135,7 @@ These are the data fields collected through the ORCID Member API and stored (wit
         *   **Resource Host Organization ID**
 
 
-#### 3.2.2 Optional {#3-2-2-optional}
+#### 3.2.2 Optional
 
 
 
@@ -146,17 +144,17 @@ These are the data fields collected through the ORCID Member API and stored (wit
 *   **Proposal End Date**
 
 
-#### 3.2.3 ORCID Record UI and xml examples.   {#3-2-3-orcid-record-ui-and-xml-examples}
+#### 3.2.3 ORCID Record UI and xml examples
 
 Information about resource use is put into a researcher’s record by the resource or proposal host, using the ORCID member API.  Researchers must provide the host with read/write permissions, which can be requested by the host during the proposal or request process.  For more on how this works, see the Working Group report or ORCID’s API documentation [9].
 
 
-### 3.3 Publisher Metadata {#3-3-publisher-metadata}
+### 3.3 Publisher Metadata
 
 These are the data fields collected and stored by a publisher, as the researcher is filing a research report, detailed in the User Facilities and Publications Working Group Report.  
 
 
-#### 3.3.1 Required Fields {#3-3-1-required-fields}
+#### 3.3.1 Required Fields
 
 
 
@@ -166,7 +164,7 @@ These are the data fields collected and stored by a publisher, as the researcher
 *   **Proposal Host Organization iD**.  This is the public identifier (one of GRID, Ringgold ID, Open Funder ID, LEI) for the organization managing the proposal or request process.
 
 
-#### 3.3.2 Optional Fields {#3-3-2-optional-fields}
+#### 3.3.2 Optional Fields
 
 
 
@@ -333,8 +331,6 @@ In metadata of = IP (Infrastructure Provider) or LP (Landing Page)
 </table>
 
 
-
-<!-- Footnotes themselves at the bottom. -->
 ## Notes
 
 [1] https://www.force11.org/group/resource-identification-initiative
