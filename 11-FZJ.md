@@ -92,7 +92,7 @@ Besides the benefits, there might also be some risks related to setting up compl
 
 [1] Central Library of Forschungszentrum Jülich. [http://fz-juelich.de/zb/EN/Home/home_node.html](http://fz-juelich.de/zb/EN/Home/home_node.html)  
 
-[2] Journal of large-scale research facilities (JLSRF).[ ] [https://jlsrf.org](https://jlsrf.org)
+[2] Journal of large-scale research facilities (JLSRF). [https://jlsrf.org](https://jlsrf.org)
 
 [3] Bibliometrics in the Central Library of Forschungszentrum Jülich. [https://fz-juelich.de/zb/EN/Expertise/bibliometrics/bibliometrics_node.html](https://fz-juelich.de/zb/EN/Expertise/bibliometrics/bibliometrics_node.html)
 
