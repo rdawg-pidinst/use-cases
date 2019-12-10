@@ -99,160 +99,160 @@ SensorML is used within SOS for encoding sensor metadata documents that are retu
 
 ```
 <sml:PhysicalSystem gml:id="Lake_Jyvasjarvi_Meteorological_Station">
-            <gml:description>On lake meteorological station providing year-round data @ 1 min
-                interval. Campbell weather station: Wind speed and direction (gust), air temperature,
-                solar radiation, rain, air pressure.</gml:description>
-            <gml:identifier codeSpace="uniqueID">https://deims.org/sensor/a5119301-bd84-4b07-9e92-b41375d4c99d</gml:identifier>
-            <gml:name>Lake Jyväsjärvi Meteorological Station deployed at site Lake
-                Päijänne LTER - Finland</gml:name>
-            <sml:keywords>
-                <sml:KeywordList>
-                    <sml:keyword>lakes</sml:keyword>
-                    <sml:keyword>snow and meteorological data</sml:keyword>
-                    <sml:keyword>year-round</sml:keyword>
-                    <sml:keyword>online</sml:keyword>
-                </sml:KeywordList>
-            </sml:keywords>
-            <sml:identification>
-                <sml:IdentifierList>
-                    <sml:identifier>
-                        <sml:Term definition="urn:ogc:def:identifier:OGC:1.0:shortName">
-                            <sml:label>short name</sml:label>
-                            <sml:value>Lake Jyväsjärvi Meteorological Station</sml:value>
-                        </sml:Term>
-                    </sml:identifier>
-                    <sml:identifier>
-                        <sml:Term definition="http://mmisw.org/ont/ioos/definition/longName">
-                            <sml:label>long name</sml:label>
-                            <sml:value>Lake Jyväsjärvi Meteorological Station deployed at site Lake
-                                Päijänne LTER - Finland</sml:value>
-                        </sml:Term>
-                    </sml:identifier>
-                </sml:IdentifierList>
-            </sml:identification>
-            <sml:classification>
-                <sml:ClassifierList>
-                    <sml:classifier>
-                        <sml:Term definition="http://www.opengis.net/def/property/OGC/0/SensorType">
-                            <sml:label>sensorType</sml:label>
-                            <sml:value>Meteorological Station</sml:value>
-                        </sml:Term>
-                    </sml:classifier>
-                </sml:ClassifierList>
-            </sml:classification>
-            <sml:capabilities name="offerings">
-                <sml:CapabilityList>
-                    <sml:capability name="offeringID">
-                        <swe:Text definition="urn:ogc:def:identifier:OGC:offeringID">
-                            <swe:label>Main Offering</swe:label>
-                            <swe:value>a5119301-bd84-4b07-9e92-b41375d4c99d/offering/1</swe:value>
-                        </swe:Text>
-                    </sml:capability>
-                </sml:CapabilityList>
-            </sml:capabilities>
-            <sml:contacts>
-                <sml:ContactList>
-                    <sml:contact xlink:arcrole="http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/pointOfContact" xlink:href="http:// orcid.org/0000-0001-9302-1174">
-                        <gmd:CI_ResponsibleParty>
-                            <gmd:individualName>
-                                <gco:CharacterString>Juha Karjalainen</gco:CharacterString>
-                            </gmd:individualName>
-                            <gmd:organisationName>
-                                <gco:CharacterString>University of Jyväskylä</gco:CharacterString>
-                            </gmd:organisationName>
-                            <gmd:positionName>
-                                <gco:CharacterString>Sensor Contact person</gco:CharacterString>
-                            </gmd:positionName>
-                            <gmd:contactInfo>
-                                <gmd:CI_Contact>
-                                    <gmd:address>
-                                        <gmd:CI_Address>
-                                            <gmd:deliveryPoint>
-                                                <gco:CharacterString>Survontie 9</gco:CharacterString>
-                                            </gmd:deliveryPoint>
-                                            <gmd:city>
-                                                <gco:CharacterString>Jyväskylä</gco:CharacterString>
-                                            </gmd:city>
-                                            <gmd:postalCode>
-                                                <gco:CharacterString>40500</gco:CharacterString>
-                                            </gmd:postalCode>
-                                            <gmd:country>
-                                                <gco:CharacterString>FI</gco:CharacterString>
-                                            </gmd:country>
-                                            <gmd:electronicMailAddress>
-                                                <gco:CharacterString>juha.karjalainen@jyu.fi</gco:CharacterString>
-                                            </gmd:electronicMailAddress>
-                                        </gmd:CI_Address>
-                                    </gmd:address>
-                                </gmd:CI_Contact>
-                            </gmd:contactInfo>
-                            <gmd:role>
-                                <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
-                            </gmd:role>
-                        </gmd:CI_ResponsibleParty>
-                    </sml:contact>
-                </sml:ContactList>
-            </sml:contacts>
-            <sml:featuresOfInterest>
-                <sml:FeatureList definition="http://www.opengis.net/def/featureOfInterest/identifier">
-                    <swe:label>Lake Jyväsjärvi</swe:label>
-                        <sml:feature
-                            xlink:href="http://cdn.lter-europe.net/"/>
-                </sml:FeatureList>
-            </sml:featuresOfInterest>
-            <sml:outputs>
-                <sml:OutputList>
-                    <sml:output name="atmospheric_parameter">
-                        <swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/20937">
-                            <swe:uom code="filler_code"/>
-                        </swe:Quantity>
-                    </sml:output>
-                    <sml:output name="solar_radiation">
-                        <swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22284">
-                            <swe:uom code="filler_code"/>
-                        </swe:Quantity>
-                    </sml:output>
-                    <sml:output name="air_temperature">
-                        <swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22035">
-                            <swe:uom code="filler_code"/>
-                        </swe:Quantity>
-                    </sml:output>
-                    <sml:output name="precipitation_intensity">
-                        <swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22204">
-                            <swe:uom code="filler_code"/>
-                        </swe:Quantity>
-                    </sml:output>
-                    <sml:output name="wind_direction">
-                        <swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22317">
-                            <swe:uom code="filler_code"/>
-                        </swe:Quantity>
-                    </sml:output>
-                    <sml:output name="wind_speed">
-                        <swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22319">
-                            <swe:uom code="filler_code"/>
-                        </swe:Quantity>
-                    </sml:output>
-                </sml:OutputList>
-            </sml:outputs>
-            <sml:position>
-                <swe:Vector id="SYSTEM_LOCATION" referenceFrame="urn:ogc:def:crs:EPSG::4326">
-                    <swe:coordinate name="easting">
-                        <swe:Quantity axisID="Lon" definition="longitude">
-                            <swe:uom code="degree"
-                                xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"/>
-                            <swe:value>62.235716000000</swe:value>
-                        </swe:Quantity>
-                    </swe:coordinate>
-                    <swe:coordinate name="northing">
-                        <swe:Quantity axisID="Lat" definition="latitude">
-                            <swe:uom code="degree"
-                                xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"/>
-                            <swe:value>25.781366000000</swe:value>
-                        </swe:Quantity>
-                    </swe:coordinate>
-                </swe:Vector>
-            </sml:position>
-        </sml:PhysicalSystem>
+	<gml:description>On lake meteorological station providing year-round data @ 1 min
+		interval. Campbell weather station: Wind speed and direction (gust), air temperature,
+		solar radiation, rain, air pressure.</gml:description>
+	<gml:identifier codeSpace="uniqueID">https://deims.org/sensor/a5119301-bd84-4b07-9e92-b41375d4c99d</gml:identifier>
+	<gml:name>Lake Jyväsjärvi Meteorological Station deployed at site Lake
+		Päijänne LTER - Finland</gml:name>
+	<sml:keywords>
+		<sml:KeywordList>
+			<sml:keyword>lakes</sml:keyword>
+			<sml:keyword>snow and meteorological data</sml:keyword>
+			<sml:keyword>year-round</sml:keyword>
+			<sml:keyword>online</sml:keyword>
+		</sml:KeywordList>
+	</sml:keywords>
+	<sml:identification>
+		<sml:IdentifierList>
+			<sml:identifier>
+				<sml:Term definition="urn:ogc:def:identifier:OGC:1.0:shortName">
+					<sml:label>short name</sml:label>
+					<sml:value>Lake Jyväsjärvi Meteorological Station</sml:value>
+				</sml:Term>
+			</sml:identifier>
+			<sml:identifier>
+				<sml:Term definition="http://mmisw.org/ont/ioos/definition/longName">
+					<sml:label>long name</sml:label>
+					<sml:value>Lake Jyväsjärvi Meteorological Station deployed at site Lake
+						Päijänne LTER - Finland</sml:value>
+				</sml:Term>
+			</sml:identifier>
+		</sml:IdentifierList>
+	</sml:identification>
+	<sml:classification>
+		<sml:ClassifierList>
+			<sml:classifier>
+				<sml:Term definition="http://www.opengis.net/def/property/OGC/0/SensorType">
+					<sml:label>sensorType</sml:label>
+					<sml:value>Meteorological Station</sml:value>
+				</sml:Term>
+			</sml:classifier>
+		</sml:ClassifierList>
+	</sml:classification>
+	<sml:capabilities name="offerings">
+		<sml:CapabilityList>
+			<sml:capability name="offeringID">
+				<swe:Text definition="urn:ogc:def:identifier:OGC:offeringID">
+					<swe:label>Main Offering</swe:label>
+					<swe:value>a5119301-bd84-4b07-9e92-b41375d4c99d/offering/1</swe:value>
+				</swe:Text>
+			</sml:capability>
+		</sml:CapabilityList>
+	</sml:capabilities>
+	<sml:contacts>
+		<sml:ContactList>
+			<sml:contact xlink:arcrole="http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/pointOfContact" xlink:href="http:// orcid.org/0000-0001-9302-1174">
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>Juha Karjalainen</gco:CharacterString>
+					</gmd:individualName>
+					<gmd:organisationName>
+						<gco:CharacterString>University of Jyväskylä</gco:CharacterString>
+					</gmd:organisationName>
+					<gmd:positionName>
+						<gco:CharacterString>Sensor Contact person</gco:CharacterString>
+					</gmd:positionName>
+					<gmd:contactInfo>
+						<gmd:CI_Contact>
+							<gmd:address>
+								<gmd:CI_Address>
+									<gmd:deliveryPoint>
+										<gco:CharacterString>Survontie 9</gco:CharacterString>
+									</gmd:deliveryPoint>
+									<gmd:city>
+										<gco:CharacterString>Jyväskylä</gco:CharacterString>
+									</gmd:city>
+									<gmd:postalCode>
+										<gco:CharacterString>40500</gco:CharacterString>
+									</gmd:postalCode>
+									<gmd:country>
+										<gco:CharacterString>FI</gco:CharacterString>
+									</gmd:country>
+									<gmd:electronicMailAddress>
+										<gco:CharacterString>juha.karjalainen@jyu.fi</gco:CharacterString>
+									</gmd:electronicMailAddress>
+								</gmd:CI_Address>
+							</gmd:address>
+						</gmd:CI_Contact>
+					</gmd:contactInfo>
+					<gmd:role>
+						<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+					</gmd:role>
+				</gmd:CI_ResponsibleParty>
+			</sml:contact>
+		</sml:ContactList>
+	</sml:contacts>
+	<sml:featuresOfInterest>
+		<sml:FeatureList definition="http://www.opengis.net/def/featureOfInterest/identifier">
+			<swe:label>Lake Jyväsjärvi</swe:label>
+				<sml:feature
+					xlink:href="http://cdn.lter-europe.net/"/>
+		</sml:FeatureList>
+	</sml:featuresOfInterest>
+	<sml:outputs>
+		<sml:OutputList>
+			<sml:output name="atmospheric_parameter">
+				<swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/20937">
+					<swe:uom code="filler_code"/>
+				</swe:Quantity>
+			</sml:output>
+			<sml:output name="solar_radiation">
+				<swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22284">
+					<swe:uom code="filler_code"/>
+				</swe:Quantity>
+			</sml:output>
+			<sml:output name="air_temperature">
+				<swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22035">
+					<swe:uom code="filler_code"/>
+				</swe:Quantity>
+			</sml:output>
+			<sml:output name="precipitation_intensity">
+				<swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22204">
+					<swe:uom code="filler_code"/>
+				</swe:Quantity>
+			</sml:output>
+			<sml:output name="wind_direction">
+				<swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22317">
+					<swe:uom code="filler_code"/>
+				</swe:Quantity>
+			</sml:output>
+			<sml:output name="wind_speed">
+				<swe:Quantity definition="http://vocabs.lter-europe.net/EnvThes/22319">
+					<swe:uom code="filler_code"/>
+				</swe:Quantity>
+			</sml:output>
+		</sml:OutputList>
+	</sml:outputs>
+	<sml:position>
+		<swe:Vector id="SYSTEM_LOCATION" referenceFrame="urn:ogc:def:crs:EPSG::4326">
+			<swe:coordinate name="easting">
+				<swe:Quantity axisID="Lon" definition="longitude">
+					<swe:uom code="degree"
+						xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"/>
+					<swe:value>62.235716000000</swe:value>
+				</swe:Quantity>
+			</swe:coordinate>
+			<swe:coordinate name="northing">
+				<swe:Quantity axisID="Lat" definition="latitude">
+					<swe:uom code="degree"
+						xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"/>
+					<swe:value>25.781366000000</swe:value>
+				</swe:Quantity>
+			</swe:coordinate>
+		</swe:Vector>
+	</sml:position>
+</sml:PhysicalSystem>
 ```
 
 
