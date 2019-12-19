@@ -177,7 +177,7 @@ There are four different levels of classification for the metadata properties:
 
 **C** - Conditional information. For example if it is desired to have an exact geo-location for an Instrument. Otherwiese the hosting infrastructure geolocation is used. Of . Conditional can be combined with M, R, and O to indicate a specific information is needed. 
 
-For certain entries a  fixed and predefined “code” list is provided to ensure a unique and uniform entry of values. For example the country code is specified as ISO 3166-1 alpha 2 entry. A code list (or for this example a link to find the code list) is provided for each specification. Entries M, R, O, C are marked with a star M*****, R*****, O*****, C*** **to indicate the existence and mandatory use of code list.
+For certain entries a  fixed and predefined “code” list is provided to ensure a unique and uniform entry of values. For example the country code is specified as ISO 3166-1 alpha 2 entry. A code list (or for this example a link to find the code list) is provided for each specification. Entries M, R, O, C are marked with a star M*, R*, O*, C* to indicate the existence and mandatory use of code list.
 
 
 <table>
