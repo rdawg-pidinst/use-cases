@@ -483,17 +483,17 @@ and **Metrology** ( [https://en.wiktionary.org/wiki/metrology](https://en.wiktio
 <!-- Footnotes themselves at the bottom. -->
 ## Notes
 
-[1]: [https://www.icos-ri.eu/](https://www.icos-ri.eu/) 
+[1] [https://www.icos-ri.eu/](https://www.icos-ri.eu/) 
 
-[2]: [https://icos-atc.lsce.ipsl.fr/](https://icos-atc.lsce.ipsl.fr/) 
+[2] [https://icos-atc.lsce.ipsl.fr/](https://icos-atc.lsce.ipsl.fr/) 
 
-[3]: [http://www.europe-fluxdata.eu/icos/home](http://www.europe-fluxdata.eu/icos/home) 
+[3] [http://www.europe-fluxdata.eu/icos/home](http://www.europe-fluxdata.eu/icos/home) 
 
-[4]: [https://otc.icos-cp.eu/](https://otc.icos-cp.eu/) 
+[4] [https://otc.icos-cp.eu/](https://otc.icos-cp.eu/) 
 
-[5]: [https://www.icos-cal.eu/](https://www.icos-cal.eu/) 
+[5] [https://www.icos-cal.eu/](https://www.icos-cal.eu/) 
 
-[6]: [https://www.icos-cp.eu/](https://www.icos-cp.eu/)
+[6] [https://www.icos-cp.eu/](https://www.icos-cp.eu/)
 
 
 <!-- Docs to Markdown version 1.0β17 -->
