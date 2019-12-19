@@ -10,11 +10,11 @@ Geocentrum II, Sölvegatan 12
 
 # Introduction
 
-The **I**ntegrated **C**arbon **O**bservation **S**ystem (ICOS [^1]) is a “pan-European research infrastructure for quantifying and understanding the greenhouse gas balance of the European continent”. ICOS consists of roughly 150 stations across Europe. The stations are split in three domains (thematic centres) namely Atmosphere [^2], Ecosystem [^3], and Ocean[^4] to collect observational data from the state of the carbon cycle in Europe. Additionally a Central Analytical Laboratory [^5] is available to support the monitoring activities of the observational networks. 
+The **I**ntegrated **C**arbon **O**bservation **S**ystem (ICOS [1]) is a “pan-European research infrastructure for quantifying and understanding the greenhouse gas balance of the European continent”. ICOS consists of roughly 150 stations across Europe. The stations are split in three domains (thematic centres) namely Atmosphere [2], Ecosystem [3], and Ocean [4] to collect observational data from the state of the carbon cycle in Europe. Additionally a Central Analytical Laboratory [5] is available to support the monitoring activities of the observational networks. 
 
 ICOS has produced an overall framework of guidelines and requirements to provide quality controlled, standardised and harmonised data collections. Each domain has a dedicated team to assess the measurements to ensure consistent quality before  the data is released to the public. 
 
-The data collections are available in parts through the thematic centres and as a one stop shop at the ICOS Carbon Portal [^6].  The Carbon Portal offers access to research data, as well as easily accessible and understandable science and educational products. 
+The data collections are available in parts through the thematic centres and as a one stop shop at the ICOS Carbon Portal [6].  The Carbon Portal offers access to research data, as well as easily accessible and understandable science and educational products. 
 
 Earth observations are ideally collected continuously over a very long time frame. A very famous long-term observation is located in Hawaii ([https://www.esrl.noaa.gov/gmd/obop/mlo/](https://www.esrl.noaa.gov/gmd/obop/mlo/)) continuously recording since 1950. This data was one of the first indicators for global increase in CO<sub>2</sub> in the atmosphere. The station is alive and still recording data. At ICOS, stations have a long-term view of at least 20 years. This leads naturally to time series datasets, from different time zones and different geographical locations as well as different sensors & instruments recording the same kind of data.  For a “European” view, the stations data needs to be harmonized and combined. Different infrastructure networks measuring the same parameters in other continents are then combined for an “Earth” view.
 
@@ -167,41 +167,7 @@ Occurrence = 1 (mandatory) or 0-1 (optional at most once) or 0-n (optional multi
 
 In metadata of = IP (Infrastructure Provider) or LP (Landing Page)
 
-
-<table>
-  <tr>
-   <td><strong>ID</strong>
-   </td>
-   <td><strong>Property</strong>
-   </td>
-   <td><strong>Occ.</strong>
-   </td>
-   <td><strong>Definition</strong>
-   </td>
-   <td><strong>Datatype</strong>
-   </td>
-   <td><strong>In metadata of</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-  </tr>
-</table>
-
-
 There are four different levels of classification for the metadata properties:
-
 
 **M** - Mandatory properties must be provided,
 
@@ -517,23 +483,17 @@ and **Metrology** ( [https://en.wiktionary.org/wiki/metrology](https://en.wiktio
 <!-- Footnotes themselves at the bottom. -->
 ## Notes
 
-[^1]:
-     [https://www.icos-ri.eu/](https://www.icos-ri.eu/) 
+[1]: [https://www.icos-ri.eu/](https://www.icos-ri.eu/) 
 
-[^2]:
-     [https://icos-atc.lsce.ipsl.fr/](https://icos-atc.lsce.ipsl.fr/) 
+[2]: [https://icos-atc.lsce.ipsl.fr/](https://icos-atc.lsce.ipsl.fr/) 
 
-[^3]:
-     [http://www.europe-fluxdata.eu/icos/home](http://www.europe-fluxdata.eu/icos/home) 
+[3]: [http://www.europe-fluxdata.eu/icos/home](http://www.europe-fluxdata.eu/icos/home) 
 
-[^4]:
-     [https://otc.icos-cp.eu/](https://otc.icos-cp.eu/) 
+[4]: [https://otc.icos-cp.eu/](https://otc.icos-cp.eu/) 
 
-[^5]:
-     [https://www.icos-cal.eu/](https://www.icos-cal.eu/) 
+[5]: [https://www.icos-cal.eu/](https://www.icos-cal.eu/) 
 
-[^6]:
-     [https://www.icos-cp.eu/](https://www.icos-cp.eu/)
+[6]: [https://www.icos-cp.eu/](https://www.icos-cp.eu/)
 
 
 <!-- Docs to Markdown version 1.0β17 -->
