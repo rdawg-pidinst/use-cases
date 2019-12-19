@@ -1,7 +1,7 @@
 # ICOS Carbon Portal Use Case 
 
 
-Claudio D’Onofrio [claudio.donofrio@nateko.lu.se](mailto:claudio.donofrio@nateko.lu.se), Maggie Hellström, Alex Vermeulen
+Claudio D’Onofrio ([claudio.donofrio@nateko.lu.se](mailto:claudio.donofrio@nateko.lu.se)), Maggie Hellström, Alex Vermeulen
 
 ICOS Carbon Portal  
 Lund University  
