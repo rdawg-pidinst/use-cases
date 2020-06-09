@@ -111,4 +111,15 @@ The instrument calibration information are provided as a multi-row table with th
 
 At any point new calibration is made the above the calibration table is updated.
 
+If the instrument is complex its sub-componets/sub-instruments are reported with a multi-row table with the following columns:
+| Column name | Column description | Column data type |
+|-|-|-|
+| Type | The sub-component / instrument type | String term from internal restricted vocabulary |
+| PFV_no | Unique id of the sub-component/instrument | Auto-generated unique integer |
+| PFV_type | Similar to Type but provided as an integer | Integer from predefined set of integers |
+| Serial_number | A serial number of the sub-component/instrument provided by its manufacturer | Free text |
+| Supplier | A supplier of the sub-component/instrument | Free text |
+| Status | An ownership status of the instrument | String term from restricted vocabulary |
+| Active | Indicates whether the sub-component/instrument is currently active or not | Boolean (Yes/No) |
+
 ## Mapping of internal instrumentation schema to PIDINST schema
