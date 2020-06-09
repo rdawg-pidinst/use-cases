@@ -1,6 +1,6 @@
 # Technical University of Denmark Wind Energy Department (DTU Wind Energy) Use Case
 
-[Nikola Vasiljevic](https://orcid.org/0000-0002-9381-9693) (niva@dtu.dk), Andrea Vignaroli (andv@dtu.dk) and Jesper Juul Holm (jjho@dtu.dk)
+Nikola Vasiljevic (niva@dtu.dk, ORCiD [0000-0002-9381-9693](https://orcid.org/0000-0002-9381-9693)), Andrea Vignaroli (andv@dtu.dk) and Jesper Juul Holm (jjho@dtu.dk)
 
 June 2020
 
@@ -39,15 +39,15 @@ Measurement standards when comes to the instrumentation are followed in research
 
 
 ## Internal instrumentation database
-[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible through within DTU network and only for selected DTU Wind Energy staff.
+[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible within the DTU network and only for selected DTU Wind Energy staff.
 
-The database has a web interface and instruments are accessible either by browsing a multi-page table which contains following columns:
+The database has a web interface and instruments are accessible  by browsing a multi-page table which contains following columns:
 
-| Database columns | Description of columns | Data type |
+| Column name | Column description | Column data type |
 |-|-|-|
-| Type | The instrument type | String term from restricted vocabulary |
+| Type | The instrument type | String term from internal restricted vocabulary |
 | PFV_type | Similar to Type but provided as an integer | Integer from predefined set of integers |
-| PFV_number | A unique id of the instrument in the instrument database | Auto-generated integer |
+| PFV_number | A unique id of the instrument in the instrument database | Auto-generated unique integer |
 | Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text |
 | Supplier | A supplier of the instrument | Free text |
 | Status | An ownership status of the instrument | String term from restricted vocabulary |
@@ -58,11 +58,57 @@ Alternatively, a direct query of a specific instrument can be done by searching 
 
 Each instrument in the database is reported with:
 - General metadata about the instrument
-- Provenance of the instrument split into status and errors
+- Provenance of the instrument provided
 - Instrument calibration information
 - Sub-components/instruments in case if the instrument is complex
 
 With the exception of the general metadata, other information are updated over the course of the instrument lifetime.
 
+The general metadata about the instrument contains following elements:
+| Metadata elements | Description of element | Data type |
+|-|-|-|
+| Make | Instrument manufacturer | Free text |
+| Type | The instrument type | String term from internal restricted vocabulary |
+| Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text |
+| Description | Description of the instrument | Free text |
+| Supplier | Instrument supplier | Free text |
+| Buy_date | The date of the instrument acquisition| Date in form MM-DD-YYYY |
+| Price | The instrument price in DKK | Float |
+| Ordered_by | DTU id of the person who acquired the instrument | Internal phonebook (strings) |
+| PFV_no | Unique id of the instrument | Auto-generated unique integer |
+| Comment | General comment about the instrument | Free text |
 
-## Mapping of internal instrumentation to PIDINST schema
+The instrument status is provided as a multi-row table with the following columns:
+| Column name | Column description | Column data type |
+|-|-|-|
+| Active | Indicates whether the instrument is currently active or not | Boolean (Yes/No) |
+| Status | An ownership status of the instrument | String term from restricted vocabulary |
+| Calibr. |  |  |
+| Position |  |  |
+| Site | Location (i.e., site) where the instrument was/is used | Free text |
+| User_ID | DTU id of the person who entered information | Internal phonebook (strings) |
+| Date_from |  |  |
+| Date_to |  |  |
+| Comment | Specific comment for the given entry in the Status table | Free text |
+| PSP_Element |  |  |
+| Accreditation |  |  |
+| Configuration |  |  |
+Whenever the instrument status is updated new row with the above information are added to the status table.
+
+The instrument calibration information are provided as a multi-row table with the following columns:
+| Column name | Column description | Column data type |
+|-|-|-|
+| Specification | Calibration specification | Free text |
+| Calibration date | Date of calibration | Date in form MM-DD-YYYY |
+| Expire date | Date when the calibration expire | Date in form MM-DD-YYYY |
+| Calibration A | Uncertainty of type A | Float |
+| Calibration B | Uncertainty of type B | Float |
+| Calibration C | ? | ? |
+| Units | Units for Calibration A, Calibration B and Calibration C | Free text |
+| Supplier | Supplier of the calibration | Free text |
+| Certificate doc | URL to the calibration report | URL |
+| Comment | Any specific comment related to the instrument calibration | Free text |
+
+At any point new calibration is made the above the calibration table is updated.
+
+## Mapping of internal instrumentation schema to PIDINST schema
