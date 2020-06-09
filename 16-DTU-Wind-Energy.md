@@ -39,9 +39,30 @@ Measurement standards when comes to the instrumentation are followed in research
 
 
 ## Internal instrumentation database
-[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible only for selected DTU Wind Energy staff.
+[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible through within DTU network and only for selected DTU Wind Energy staff.
 
-<!-- Current schema -->
+The database has a web interface and instruments are accessible either by browsing a multi-page table which contains following columns:
+
+| Database columns | Description of columns | Data type |
+|-|-|-|
+| Type | The instrument type | String term from restricted vocabulary |
+| PFV_type | Similar to Type but provided as an integer | Integer from predefined set of integers |
+| PFV_number | A unique id of the instrument in the instrument database | Auto-generated integer |
+| Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text |
+| Supplier | A supplier of the instrument | Free text |
+| Status | An ownership status of the instrument | String term from restricted vocabulary |
+| Site | Last location (i.e., site) where the instrument was used | Free text |
+| Active | Indicates whether the instrument is currently active or not | Boolean (Yes/No) |
+
+Alternatively, a direct query of a specific instrument can be done by searching the database through the same web interface using **PFV_number** or **Serial_number**.
+
+Each instrument in the database is reported with:
+- General metadata about the instrument
+- Provenance of the instrument split into status and errors
+- Instrument calibration information
+- Sub-components/instruments in case if the instrument is complex
+
+With the exception of the general metadata, other information are updated over the course of the instrument lifetime.
 
 
 ## Mapping of internal instrumentation to PIDINST schema
