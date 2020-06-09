@@ -83,16 +83,16 @@ The instrument status is provided as a multi-row table with the following column
 |-|-|-|
 | Active | Indicates whether the instrument is currently active or not | Boolean (Yes/No) |
 | Status | An ownership status of the instrument | String term from restricted vocabulary |
-| Calibr. |  |  |
-| Position |  |  |
+| Calibration | ? | ? |
+| Position | ? | ? |
 | Site | Location (i.e., site) where the instrument was/is used | Free text |
 | User_ID | DTU id of the person who entered information | Internal phonebook (strings) |
-| Date_from |  |  |
-| Date_to |  |  |
+| Date_from | ? | ? |
+| Date_to | ? | ? |
 | Comment | Specific comment for the given entry in the Status table | Free text |
-| PSP_Element |  |  |
-| Accreditation |  |  |
-| Configuration |  |  |
+| PSP_Element | ? | ? |
+| Accreditation | ? | ? |
+| Configuration | ? | ? |
 Whenever the instrument status is updated new row with the above information are added to the status table.
 
 The instrument calibration information are provided as a multi-row table with the following columns:
