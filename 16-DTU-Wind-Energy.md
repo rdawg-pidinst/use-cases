@@ -1,12 +1,12 @@
-# Danish Technical University of Denmark Wind Energy Department (DTU Wind Energy) Use Case
+# Technical University of Denmark Wind Energy Department (DTU Wind Energy) Use Case
 
 [Nikola Vasiljevic](https://orcid.org/0000-0002-9381-9693) (niva@dtu.dk), Andrea Vignaroli (andv@dtu.dk) and Jesper Juul Holm (jjho@dtu.dk)
 
 June 2020
 
 ## Introduction
-
-Wind energy domain, even though largely seen as an engineering domain, is characterized as  multi-disciplinary, thus relaying on the following domains with an aim of providing practical solutions that will result in cost-effective electricity from the wind:
+The main focus of wind energy domain is to provide practical solutions that will result in cost-effective electricity produced from the wind.
+To achive such goals, wind energy domain, even though largely seen as an engineering domain, is characterized as  multi-disciplinary domain, re-using existing solutions and contributing with new one in the following domains:
 - Earth Sciences, especially atmospheric science
 - Mechanical Engineering
 - Material Science
@@ -14,8 +14,9 @@ Wind energy domain, even though largely seen as an engineering domain, is charac
 - Computer Science
 - Social Science
 
-At the heart of the domain are measurements. Generally speaking, wind energy domain immensely cares about the metrological aspects of its instruments since uncertainties of measurands directly translate to for example finances (e.g., the uncertainty of 0.1 m/s in the measured wind speed leads to an estimated saving/loss worth around 10 M£ per year for the 25 year lifetime of a wind farm project) or safety ([failure of wind turbines can be dangerous to people](https://www.youtube.com/watch?v=xwS-FH38Fqg)) .
+At the heart of the wind energy domain are measurements. Generally speaking, wind energy domain immensely cares about the [metrological](https://en.wikipedia.org/wiki/Metrology) aspects of its instruments since uncertainties of measurands directly translate to for example finances (e.g., the uncertainty of 0.1 m/s in the measured wind speed leads to an estimated saving/loss worth around 10 M£ per year for the 25 year lifetime of a wind farm project) or safety ([failure of wind turbines can be dangerous to people](https://www.youtube.com/watch?v=xwS-FH38Fqg)) .
 
+## About DTU Wind Energy
 [DTU Wind Energy](https://www.vindenergi.dtu.dk/english) is one of the world most recognized wind energy institute. DTU Wind Energy operates [a number of research and commercial facilities](https://www.vindenergi.dtu.dk/english/test-centers/research-facilities) (some permanent, some mobile) which consists of a large pull of instruments. Certain instruments are off-the-shelf-products, while others DTU Wind Energy either develops or modifies to suit particular needs.
 
 ## Motivation for PIDINST implementation
