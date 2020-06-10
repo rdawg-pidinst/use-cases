@@ -30,7 +30,7 @@ Commercial measurements followed standards such as [IEC 61400](https://en.wikipe
 
 Measurement standards when comes to the instrumentation are followed in research oriented measurement campaigns too, with exceptions for new instruments which are not yet included in them. In research campaigns we often encounter multi-disciplinarity nature of wind energy domain when comes to naming of data streams. Researchers who are more Earth Science oriented tend to use [Climate Forecast standard names](http://cfconventions.org/standard-names.html). On the other hand, researchers with engineering background tend to use IEC. However, even more often we encounter ad-hoc naming of data streams. Nevertheless, DTU Wind Energy is making [a significant push in adoption of the FAIR data principles](https://zenodo.org/record/3865225), and thus trans-disciplinary harmonization of commercial and research oriented measurements.
 
-## General measurement campaigns workflow
+## General measurement campaign workflow
 
 ### Commercial campaigns
 
@@ -152,4 +152,6 @@ The table below shows maping of PIDINST schema properties to the currently and i
 | 10\.2               | relationType               | HasComponent, IsComponentOf,                                                                                                         | PIDINST, DOI, URL                                                                                                                 |
 | 11                  | AlternateIdentifier        | Serial\_number, PFV\_no                                                                                                              | Serial\_number, PFV\_no                                                                                                           |
 | 11\.1               | alternateIdentifierType    | serialNumber and inventoryNumber                                                                                                     | serialNumber and inventoryNumber                                                                                                  |
+
+
 We can see that adapting PIDINST out internal instrument database schema and its properties could be improved.
