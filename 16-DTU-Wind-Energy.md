@@ -39,13 +39,13 @@ Measurement standards when comes to the instrumentation are followed in research
 
 
 ## Internal instrumentation database
-[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible within the DTU network and only for selected DTU Wind Energy staff.
+[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible within the DTU network and only for selected DTU Wind Energy staff. The database contains actual instruments and related components (e.g., data acquisition systems, batteries, UPS, etc.).
 
-The database has a web interface and instruments are accessible  by browsing a multi-page table which contains following columns:
+The database has a web interface and instruments and related components are accessible  by browsing a multi-page table which contains following columns:
 
 | Column name | Column description | Column data type |
 |-|-|-|
-| Type | The instrument type | String term from internal restricted vocabulary |
+| Type | The instrument/component type | String term from internal restricted vocabulary |
 | PFV_type | Similar to Type but provided as an integer | Integer from predefined set of integers |
 | PFV_number | A unique id of the instrument in the instrument database | Auto-generated unique integer |
 | Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text |
