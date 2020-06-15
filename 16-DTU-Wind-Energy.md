@@ -32,11 +32,6 @@ Measurement standards when comes to the instrumentation are followed in research
 
 ## General measurement campaign workflow
 
-### Commercial campaigns
-
-
-### Research campaigns
-
 
 ## Internal instrumentation database
 [DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk) (initially developed 20 years ago), which is accessible within the DTU network and only for selected DTU Wind Energy staff. The database contains metadata on actual instruments and related components (e.g., data acquisition systems, batteries, UPS, etc.) An instrument/component can have subcomponents (e.g. an enclosure), and is thus referred to as a "complex instrument".
