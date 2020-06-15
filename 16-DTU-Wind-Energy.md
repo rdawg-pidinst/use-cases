@@ -39,60 +39,61 @@ Measurement standards when comes to the instrumentation are followed in research
 
 
 ## Internal instrumentation database
-[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible within the DTU network and only for selected DTU Wind Energy staff. The database contains actual instruments and related components (e.g., data acquisition systems, batteries, UPS, etc.).
+[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible within the DTU network and only for selected DTU Wind Energy staff. The database contains actual instruments and related components (e.g., data acquisition systems, batteries, UPS, etc.). An instrument/component can have subcomponents (e.g. an enclosure), and is thus referred to as a "complex instrument".
 
 The database has a web interface and instruments and related components are accessible  by browsing a multi-page table which contains following columns:
 
 | Column name | Column description | Column data type |
 |-|-|-|
-| Type | The instrument/component type | String term from internal restricted vocabulary |
-| PFV_type | Similar to Type but provided as an integer | Integer from predefined set of integers |
-| PFV_number | A unique id of the instrument in the instrument database | Auto-generated unique integer |
-| Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text |
-| Supplier | A supplier of the instrument | Free text |
-| Status | An ownership status of the instrument | String term from restricted vocabulary |
-| Site | Last location (i.e., site) where the instrument was used | Free text |
+| Type | The instrument/component type | String term from user-maintained list of instrument types |
+| PFV_type | Unique ID of Type | Manually, sequentially numbered unique integer |
+| PFV_number | Unique ID of the instrument in the instrument database | Manually, sequentially numbered unique integer |
+| Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text, optional |
+| Supplier | The supplier of the instrument | String term from user-maintained list of suppliers |
+| Status | An inventory status of the instrument | String term from restricted vocabulary |
+| Site | Current or last location (site/parent component) where the instrument was used | String term from user-maintained list of sites |
 | Active | Indicates whether the instrument is currently active or not | Boolean (Yes/No) |
 
-Alternatively, a direct query of a specific instrument can be done by searching the database through the same web interface using **PFV_number** or **Serial_number**.
+Alternatively, a direct query of a specific instrument can be done by searching the database through the same web interface using **PFV_number**.
 
 Each instrument in the database is reported with:
 - General metadata about the instrument
 - Provenance of the instrument provided
 - Instrument calibration information
-- Sub-components/instruments in case if the instrument is complex
+- Information about errors and repairs
+- Subcomponents/-instruments in case the instrument is complex.
 
 With the exception of the general metadata, other information are updated over the course of the instrument lifetime.
 
 The general metadata about the instrument contains following elements:
 | Metadata elements | Description of element | Data type |
 |-|-|-|
-| Make | Instrument manufacturer | Free text |
-| Type | The instrument type | String term from internal restricted vocabulary |
-| Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text |
+| Make | Instrument manufacturer | String term from user-maintained list of instrument types |
+| Type | The instrument type | String term from user-maintained list of instrument types |
+| Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text, optional |
 | Description | Description of the instrument | Free text |
-| Supplier | Instrument supplier | Free text |
-| Buy_date | The date of the instrument acquisition| Date in form MM-DD-YYYY |
+| Supplier | Instrument supplier | String term from user-maintained list of suppliers |
+| Buy_date | The date of the instrument acquisition| Date in form MM-DD-YYYY (comment: on web site, not in DB - jjho) |
 | Price | The instrument price in DKK | Float |
-| Ordered_by | DTU id of the person who acquired the instrument | Internal phonebook (strings) |
-| PFV_no | Unique id of the instrument | Auto-generated unique integer |
+| Ordered_by | DTU id of the person who acquired the instrument | Internal phonebook (string) |
+| PFV_no | Unique id of the instrument | Manually, sequentially numbered unique integer |
 | Comment | General comment about the instrument | Free text |
 
 The instrument status is provided as a multi-row table with the following columns:
 | Column name | Column description | Column data type |
 |-|-|-|
-| Active | Indicates whether the instrument is currently active or not | Boolean (Yes/No) |
-| Status | An ownership status of the instrument | String term from restricted vocabulary |
-| Calibration | ? | ? |
-| Position | ? | ? |
-| Site | Location (i.e., site) where the instrument was/is used | Free text |
-| User_ID | DTU id of the person who entered information | Internal phonebook (strings) |
-| Date_from | ? | ? |
-| Date_to | ? | ? |
-| Comment | Specific comment for the given entry in the Status table | Free text |
-| PSP_Element | ? | ? |
-| Accreditation | ? | ? |
-| Configuration | ? | ? |
+| Active | Indicates whether the instrument is active or not at the time of the status update | Boolean (Yes/No) |
+| Status | An inventory status of the instrument | String term from restricted vocabulary |
+| Calibration | Indicates if the instrument has been calibrated at the time of the status update | Boolean (Yes/No) |
+| Position | Remark about placement of the instrument (e.g. altitude, direction, shelf etc.) | Free text |
+| Site | Location (i.e. site or stock ) where the instrument was/is used | Free text |
+| User_ID | DTU id of the person who entered the information | Internal phonebook (string) |
+| Date_from | The start date of the status update | Date |
+| Date_to | The ending date of the status update (e.g. an instrument should be taken down). Not heavily used. | Date |
+| Comment | Specific comment for the given entry in the status table | Free text |
+| PSP_Element | Internally used project number | Free text |
+| Accreditation | If the accomplishment has been accreditated | Boolean (Yes/No) |
+| Configuration | Relevant information about new/changed configuration of the equipment | Free text |
 Whenever the instrument status is updated new row with the above information are added to the status table.
 
 The instrument calibration information are provided as a multi-row table with the following columns:
@@ -103,27 +104,29 @@ The instrument calibration information are provided as a multi-row table with th
 | Expire date | Date when the calibration expire | Date in form MM-DD-YYYY |
 | Calibration A | Uncertainty of type A | Float |
 | Calibration B | Uncertainty of type B | Float |
-| Calibration C | ? | ? |
+| Calibration C | Uncertainty of type C | Float |
+| Calibration coefficient | ? | ? |
 | Units | Units for Calibration A, Calibration B and Calibration C | Free text |
-| Supplier | Supplier of the calibration | Free text |
+| Supplier | Supplier of the calibration | String term from user-maintained list of suppliers |
 | Certificate doc | URL to the calibration report | URL |
 | Comment | Any specific comment related to the instrument calibration | Free text |
 
-At any point new calibration is made the above the calibration table is updated.
+At any point new calibration is made the above calibration table is updated.
 
-If the instrument is complex its sub-componets/sub-instruments are reported with a multi-row table with the following columns:
+If the instrument is complex its subcomponents/subinstruments are reported with a multi-row table with the following columns:
+
 | Column name | Column description | Column data type |
 |-|-|-|
-| Type | The sub-component / instrument type | String term from internal restricted vocabulary |
-| PFV_no | Unique id of the sub-component/instrument | Auto-generated unique integer |
-| PFV_type | Similar to Type but provided as an integer | Integer from predefined set of integers |
-| Serial_number | A serial number of the sub-component/instrument provided by its manufacturer | Free text |
-| Supplier | A supplier of the sub-component/instrument | Free text |
+| Type | The subcomponent / instrument type | String term from user-maintained list of instrument types |
+| PFV_no | Unique id of the instrument | Manually, sequentially numbered unique integer |
+| PFV_type | Unique ID of Type | Manually, sequentially numbered unique integer |
+| Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text, optional |
+| Supplier | Instrument supplier | String term from user-maintained list of suppliers |
 | Status | An ownership status of the instrument | String term from restricted vocabulary |
-| Active | Indicates whether the sub-component/instrument is currently active or not | Boolean (Yes/No) |
+| Active | Indicates whether the subcomponent/-instrument is active or not at the time of the status update | Boolean (Yes/No) |
 
 ## Mapping of internal instrumentation schema to PIDINST schema
-The table below shows maping of PIDINST schema properties to the currently and ideally available properties in instruments\.windenergy\.dtu\.dk.
+The table below shows mapping of PIDINST schema properties to the currently and ideally available properties in instruments\.windenergy\.dtu\.dk.
 
 
 | PIDINST property ID<br> | PIDINST property<br>           | instruments.windenergy.dtu.dk<br>current property <br>  | instruments.windenergy.dtu.dk<br>future property <br>                                                                |
@@ -152,6 +155,7 @@ The table below shows maping of PIDINST schema properties to the currently and i
 | 10\.2               | relationType               | HasComponent, IsComponentOf,                                                                                                         | PIDINST, DOI, URL                                                                                                                 |
 | 11                  | AlternateIdentifier        | Serial\_number, PFV\_no                                                                                                              | Serial\_number, PFV\_no                                                                                                           |
 | 11\.1               | alternateIdentifierType    | serialNumber and inventoryNumber                                                                                                     | serialNumber and inventoryNumber                                                                                                  |
+
 
 
 <!-- We can see that adopting PIDINST our internal instrument database schema and its properties could be improved. -->
