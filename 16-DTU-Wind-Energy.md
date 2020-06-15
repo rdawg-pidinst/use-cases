@@ -39,7 +39,7 @@ Measurement standards when comes to the instrumentation are followed in research
 
 
 ## Internal instrumentation database
-[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which is accessible within the DTU network and only for selected DTU Wind Energy staff. The database contains actual instruments and related components (e.g., data acquisition systems, batteries, UPS, etc.). An instrument/component can have subcomponents (e.g. an enclosure), and is thus referred to as a "complex instrument".
+[DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates an instrumentation database [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk) (initially developed 20 years ago), which is accessible within the DTU network and only for selected DTU Wind Energy staff. The database contains metadata on actual instruments and related components (e.g., data acquisition systems, batteries, UPS, etc.) An instrument/component can have subcomponents (e.g. an enclosure), and is thus referred to as a "complex instrument".
 
 The database has a web interface and instruments and related components are accessible  by browsing a multi-page table which contains following columns:
 
@@ -73,7 +73,7 @@ The general metadata about the instrument contains following elements:
 | Serial_number | A serial number of the instrument provided by the instrument manufacturer | Free text, optional |
 | Description | Description of the instrument | Free text |
 | Supplier | Instrument supplier | String term from user-maintained list of suppliers |
-| Buy_date | The date of the instrument acquisition| Date in form MM-DD-YYYY (comment: on web site, not in DB - jjho) |
+| Buy_date | The date of the instrument acquisition| Date |
 | Price | The instrument price in DKK | Float |
 | Ordered_by | DTU id of the person who acquired the instrument | Internal phonebook (string) |
 | PFV_no | Unique id of the instrument | Manually, sequentially numbered unique integer |
@@ -125,16 +125,18 @@ If the instrument is complex its subcomponents/subinstruments are reported with 
 | Status | An ownership status of the instrument | String term from restricted vocabulary |
 | Active | Indicates whether the subcomponent/-instrument is active or not at the time of the status update | Boolean (Yes/No) |
 
-## Mapping of internal instrumentation schema to PIDINST schema
-The table below shows mapping of PIDINST schema properties to the currently and ideally available properties in instruments\.windenergy\.dtu\.dk.
+## Implementation PIDINST schema
+The table below shows mapping between PIDINST schema and instruments properties available in [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk). Also, the last table column highlights potential improvements that could be introduce to the existing version of [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk) or that can used to develop next version of this database having PIDINST minting in its core.
+
+Since [DTU Wind Energy](https://www.vindenergi.dtu.dk/english) operates commercial measurement campaigns the entire data base of instruments cannot be made publicly available. Therefore, as a proof-of-concept of PIDISNT implementation we will mirror parts of [instruments.windenergy.dtu.dk](instruments.windenergy.dtu.dk), which would not harm commercial competitive advantage of DTU Wind Energy neither harm its commercial customers. To start with this work we will make available access to information on instruments located at a meteorological mast which operates in front of the [research wind turbine V52](https://www.vindenergi.dtu.dk/english/Research/Research-Facilities/The-research-wind-turbine-V52) as well to a number of [WindScanners](https://www.vindenergi.dtu.dk/english/research/research-facilities/windscanner).
 
 
-| PIDINST property ID<br> | PIDINST property<br>           | instruments.windenergy.dtu.dk<br>current property <br>  | instruments.windenergy.dtu.dk<br>future property <br>                                                                |
+| PIDINST property ID<br> | PIDINST property<br>           | instruments.windenergy.dtu.dk<br> property <br>  | Potential improvements |
 |---------------------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | 1                   | Identifier                 | Serial\_number, PFV\_no                                                                                                              | DOI or ePIC                                                                                                                       |
 | 1\.1                | identifierType             | serialNumber and inventoryNumber                                                                                                     | DOI or ePIC                                                                                                                       |
 | 2                   | LandingPage                | https://instruments.windenergy.dtu.dk/index.php?page=show\_instrument&id=PFV\_no accessible only internally                      | Open access to https://instruments\.windenergy\.dtu\.dk/PFV\_type/PFV\_no/                                                        |
-| 3                   | Name                       | Type                                                                                                                                 | Improved restricted vocabulary of intruments                                                                                      |
+| 3                   | Name                       | Type                                                                                                                                 | Improved controlled vocabulary of instruments                                                                                      |
 | 4                   | Owner                      | Automatically we can only either state DTU Wind Energy or indicate staff that ordered and\-or added changes to the instrument status | Should be DTU Wind Energy followed with ids of staff who built, maintained and installed instrument                                |
 | 4\.1                | ownerName                  | Ordered\_by, User\_id or DTU Wind Energy                                                                                             | Names of involved staff and institute name                                                                                        |
 | 4\.2                | ownerContact               | Ordered\_by@dtu\.dk, User\_id@dtu\.dk                                                                                                | Email of staff and central email address of DTU Wind Energy                                                                       |
@@ -146,9 +148,9 @@ The table below shows mapping of PIDINST schema properties to the currently and 
 | 5\.2\.1             | manufacturerIdentifierType | URL                                                                                                                                  | URL                                                                                                                               |
 | 5\.3                | modelName                  | Type                                                                                                                                 | Type                                                                                                                              |
 | 6                   | Description                | Description                                                                                                                          | Description                                                                                                                       |
-| 7                   | InstrumentType             | Type or PFV\_type                                                                                                                    | Restricted vocabulary of intrument types                                                                                          |
-| 8                   | MeasuredVariable           | Units \(partially\)                                                                                                                  | Restricted vocabulary of variables                                                                                                |
-| 9                   | Date                       | Date when instrument was acquired, calibrated, used, decomissioned                                                                   | An improved set of dates related to the instrument                                                                                |
+| 7                   | InstrumentType             | Type or PFV\_type                                                                                                                    | Improved controlled vocabulary of instrument types                                                                                          |
+| 8                   | MeasuredVariable           | Units \(partially\)                                                                                                                  | Direct link to controlled vocabulary of parameters                                               |
+| 9                   | Date                       | Date when instrument was acquired, calibrated, used, decommissioned                                                                   | An improved set of dates related to the instrument                                                                                |
 | 9\.1                | dateType                   | Buy\_date, Date\_from, Date\_to, Calibration date, Expiration date                                                                   | Commissioned, Decommissioned, Calibration, \.\.\.                                                                                 |
 | 10                  | RelatedIdentifier          | PFV\_no of subcomponents                                                                                                             | This would be calibration and technical reports, instrumentation papers, data as well subcomponents/instruments                   |
 | 10\.1               | relatedIdentifierType      | PFV\_no                                                                                                                              | PIDs or URLs                                                                                                                      |
@@ -158,4 +160,5 @@ The table below shows mapping of PIDINST schema properties to the currently and 
 
 
 
-<!-- We can see that adopting PIDINST our internal instrument database schema and its properties could be improved. -->
+
+
