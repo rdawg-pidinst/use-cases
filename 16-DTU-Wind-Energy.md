@@ -104,9 +104,9 @@ The instrument calibration information are provided as a multi-row table with th
 | Expire date | Date when the calibration expire | Date in form MM-DD-YYYY |
 | Calibration A | Uncertainty of type A | Float |
 | Calibration B | Uncertainty of type B | Float |
-| Calibration C | Uncertainty of type C | Float |
-| Calibration coefficient | ? | ? |
-| Units | Units for Calibration A, Calibration B and Calibration C | Free text |
+<!-- | Calibration C | Uncertainty of type C | Float |
+| Calibration coefficient | ? | ? | -->
+| Units | Units for Calibration A and Calibration B | Free text |
 | Supplier | Supplier of the calibration | String term from user-maintained list of suppliers |
 | Certificate doc | URL to the calibration report | URL |
 | Comment | Any specific comment related to the instrument calibration | Free text |
