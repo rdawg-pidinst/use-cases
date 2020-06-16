@@ -112,6 +112,7 @@ The instrument status is provided as a multi-row table with the following column
 | PSP_Element | Internally used project number | Free text |
 | Accreditation | If the accomplishment has been accreditated | Boolean (Yes/No) |
 | Configuration | Relevant information about new/changed configuration of the equipment | Free text |
+
 Whenever the instrument status is updated new row with the above information are added to the status table.
 
 The instrument calibration information are provided as a multi-row table with the following columns:
