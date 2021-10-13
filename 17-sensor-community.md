@@ -1,15 +1,11 @@
-# PIDs for Instruments Use-Case
-
-Following: http://dtr-test.pidconsortium.eu/#objects/21.T11148/17ce618137e697852ea6
-
-
-## Gesellschaft für wissenschaftliche Datenverarbeitung Göttingen, Community Use-Case
+# PIDs for Instruments Sensor Community Use-Case
+## Gesellschaft für wissenschaftliche Datenverarbeitung Göttingen, Sensor Community Use-Case
 
 Sven Bingert (sven.bingert@gwdg.de ORCID [0000-0001-9547-1582](https://orcid.org/0000-0001-9547-1582))
 Jakob Hördt (j.hoerdt@stud.uni-goettingen.de ORCID [0000-0001-5559-0368](https://orcid.org/0000-0001-5559-0368))
 
 
-July 2020
+October 2021
 
 ### Introduction
 
@@ -34,44 +30,35 @@ the central data collection end point.
 
 
 ### Implementation PIDINST schema
+Following: https://dtr-test.pidconsortium.eu/#objects/21.T11148/17ce618137e697852ea6
 
+Example pids:
+- https://hdl.handle.net/21.11138/7b58b582-096a-4fd8-a966-8d01e589a95b?noredirect
+- https://hdl.handle.net/21.11138/a6442237-381e-4e97-92f7-74b7749350da?noredirect
 
-PIDINST property ID | PIDINST property<br>     | equivalent sensor.community property                                                                              | Potential improvements
---------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1                   | Identifier               | sensor_id                                                                                                         | PIDINST
-2                   | LandingPage              | https://sensor.community                                                                                          | https://sensor.community/devices/{Identifier} or similar template uri
-3                   | Name                     | sensor_type                                                                                                       |
-4                   | Owners                   |                                                                                                                   | Simple form allows citizen scientists to identify with the sensor, increasing visibility and identification with the project. If not provided by the owner, the sensor.community can be used instead or in addition to citizen scientis contact.
-4.1                 | Owner                    | sensor.community                                                                                                  |
-4.1.1               | ownerName                | sensor.community                                                                                                  |
-4.1.2               | ownerContact             | contact@sensor.community                                                                                          |
-4.1.3               | ownerIdentifier          |                                                                                                                   |
-4.2                 | Owner                    | Currently private                                                                                                 |
-4.2.1               | ownerName                | Name of the citizen scientist                                                                                     | Can be declared using form.
-4.2.2               | ownerContact             |                                                                                                                   | Email address of citizen scientist who owns the sensor. Obtained through form.
-5                   | Manufacturers            |                                                                                                                   |
-5.1                 | Manufacturer             | Currently private                                                                                                 | Manufacturer information also acquired through form that citizen scientists fill out.
-5.1.1               | manufacturerName         |                                                                                                                   |
-5.1.2               | manufacturerIdentifier   |                                                                                                                   |
-5.1.3               | modelName                | Only a few types of boards are distributed, but this is still private like the rest of the Manufacturer property. |
-6                   | Description              | Technical description shared by all sensors of the same sensor_type                                               |
-7                   | InstrumentType           | Sensor class, eg. Weather sensor, or fine dust sensor. Derived from sensor_type.                                  |
-8                   | MeasuredVariables        | Derived from sensor_type, a dht22 sensor for example measures the values temperature and humidity.                |
-8.1                 | MeasuredVariable         | eg. temperature                                                                                                   |
-9                   | Dates                    | Commissioned and Decommissioned are known.                                                                        | BuyDate, Commissioned, Decommissioned. BuyDate can be declared by citizen scientists through form
-9.1                 | Date                     | first_msg                                                                                                         |
-9.2                 | Date                     | last_msg                                                                                                          |
-9.3                 | Date                     |                                                                                                                   |
-10                  | RelatedIdentifiers       |                                                                                                                   |
-10.1                | RelatedIdentifier        | A station id called location is known for every sensor that is attached to it.                                    | The id of the station this sensor belongs to.
-10.1.1              | relatedIdentifierValue   | location                                                                                                          | location
-10.1.2              | relatedIdentifierType    |                                                                                                                   | other-Identifier
-10.1.3              | relationType             | BELONGS_TO                                                                                                        | isComponentOf
-10.2                | RelatedIdentifier        |                                                                                                                   | PIDINST of the sensors (multiple possible), that share a station with this sensor
-10.2.1              | relatedIdentifierValue   | sensor_id (of sibling sensor)                                                                                     | PIDINST
-10.2.2              | relatedIdentifierType    |                                                                                                                   | "PIDINST"
-10.2.3              | relationType             |                                                                                                                   | isSibling
-11                  | AlternateIdentifiers     |                                                                                                                   |
-11.1                | AlternateIdentifier      |                                                                                                                   |
-11.1.1              | alternateIdentifierValue | sensor_id                                                                                                         |
-11.1.2              | alternateIdentifierType  |                                                                                                                   | other-Identifier
+PIDINST property ID|PIDINST property|current implementation|Potential improvements
+----------|----------|----------|----------
+1|Identifier|PIDINST|
+2|LandingPage|https://sensor.community|https://sensordata.open-forecast.eu/devices/{Identifier} or similar template uri
+3|Name|sensor_id|
+4|Owners||Simple form could allow citizen scientists to identify with the sensor, increasing visibility and identification with the project.
+4.1|Owner||
+4.1.1|ownerName|SensorCommunity|
+4.1.2|ownerContact|contact@open-forecast.eu|
+4.1.3|ownerIdentifier||
+4.2|Owner||
+4.2.1|ownerName||Can be declared using form.
+4.2.2|ownerContact||Email address of citizen scientist who owns the sensor. Obtained through form.
+5|Manufacturers|Manufacturer of the sensor component derived from the known sensor_type|
+5.1|Manufacturer||
+5.1.1|manufacturerName||
+5.1.2|manufacturerIdentifier|not present|determine Identifiers for the small number of possible Manufacturers
+6|Model||
+6.1|modelIdentifier|sensor_type eg. SDS011|find out an Identifier for the sensor_type
+6.2|modelName|sensor_type|
+7|Description|Technical description shared by all sensors of the same sensor_type and a Datasheet URL if available|
+8|InstrumentType|Sensor classification, eg. Weather sensor, fine dust sensor. Derived from sensor_type.|
+8|MeasuredVariables|list of measured variables, derived from sensor_type. Currently a subset of [pressure, altitude, pressure_sealevel, temperature, humidity, PM10, PM2.5, noise_LAeq, noise_LA_min, noise_LA_max, noise_LA01, noise_LA95, P0, durP1, ratioP1, durP2, ratioP2, counts_per_minute, hv_pulses, tube, counts, sample_time_ms, P4, N10, N4, N25, N1, N05, TS, co2_ppm]|a description for each variable could be helpful
+9|Dates|Only the earliest and latest measurement dates are known. first_msg is taken as Commissioned, last_msg is given as another date without a dateType|BuyDate, Commissioned, Decommissioned. BuyDate could be declared by citizen scientists through form
+10|RelatedIdentifiers|not implemented|A station id called location is known for every sensor that is attached to it. Could also put sibling sensors here.
+11|AlternateIdentifiers|no use|
